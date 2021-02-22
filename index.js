@@ -1,5 +1,7 @@
 // ⭐️ Example Challenge START ⭐️
 
+const { loadOptions } = require("@babel/core");
+
 /**Example Task : processFirstItem()
  * This example shows how you might go about solving the rest of the tasks
  * 
@@ -62,9 +64,11 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+  return Math.floor(Math.random() * 3);
+  // return Math.floor(Math.random() * Math.floor(3)); 
 }
+console.log(inning());
 
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
@@ -135,6 +139,20 @@ Use the scoreboard function below to do the following:
   "This game will require extra innings: Away 10 - Home 10"
 ]  
   */
+
+// receiving 2 callback function & no. of innings as parameters
+// score t4, t2, no of innings
+// returning an array
+
+
+// in for loop, pushing to this array, and string say
+
+
+// after forloop, push final array
+
+
+
+
 
 function scoreboard(/* CODE HERE */) {
   /* CODE HERE */
