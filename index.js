@@ -85,17 +85,27 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(inningCB, inning){
+  let Home = 0;
+  let Away = 0;
+  for (let i = 0; i < inning; i++) {
+    Home = Home + inningCB();
+    Away = Away + inningCB();
+  }
+  return {Home, Away};
 }
+console.log(finalScore(inning, 6));
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
-
-function getInningScore(/*Your Code Here */) {
+//high order func
+function getInningScore(inning) {
   /*Your Code Here */
+  let home = 0;
+  let away = 0;
+  return {}
 }
 
 
@@ -154,11 +164,22 @@ Use the scoreboard function below to do the following:
 
 
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inning, num) {
+  let mainHome = 0;
+  let mainAway = 0;
+  for (let i = 0; i < num; i++) {
+    let homeScore = inning(i);
+    mainHome += homeScore;
+    let awayScore = inning(i);
+    mainAway += awayScore;
+    console.log(`Inning ${i+1}: Away ${awayScore} - Home ${homeScore}`);
+  }
+  if (mainHome === mainAway) {
+    return (`This game will require extra innings: Away ${mainAway} - Home ${mainHome}`);
+  }
 }
 
-
+scoreboard(inning, 9);
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
